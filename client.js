@@ -11,6 +11,7 @@ const connect = function() {
   conn.setEncoding("utf8");
 
   conn.on('data', (data) => {
+    
     console.log(data.toString());
     conn.end();
   });
@@ -18,6 +19,7 @@ const connect = function() {
   conn.on('connect', () => {
     console.log('Sucessfuly connected to game server');
     conn.write('Name: BCD');
+  //   conn.write("Move: up");
   });
   return conn;
 };
